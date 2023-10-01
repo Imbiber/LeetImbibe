@@ -4,8 +4,13 @@ class Solution {
         StringBuilder ans = new StringBuilder();
         
         for (String word : words){
-            StringBuilder rev= new StringBuilder (word).reverse();
-            ans.append(rev).append(" ");  
+            StringBuilder revWord = new StringBuilder();
+            int len = word.length();
+
+            for(int i=len-1;i>=0;i--){
+              revWord=revWord.append(word.charAt(i));
+            }
+          ans.append(revWord).append(" ");
         }
    
         return ans.toString().trim();
